@@ -1,7 +1,6 @@
 /* publishes messages to bend to ground with base at +0.5 radian
    Written by Aneesh PA on 04/05/17 for Kuka Youbot
    Tested on Gazebo first
-   Tested on Actual Youbot on 05/05/17
 */
 #include <ros/ros.h>
 #include <unistd.h> //for usleep
