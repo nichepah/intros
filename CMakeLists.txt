@@ -27,7 +27,9 @@ add_executable(youbot_gripper_close src/youbot_gripper_close.cpp)
 add_executable(youbot_home src/youbot_home.cpp)
 add_executable(youbot_base_rotate_bend src/youbot_base_rotate_bend.cpp)
 add_executable(youbot_gazebo_pick_n_place src/youbot_gazebo_pick_n_place.cpp)
+add_executable(bridge_rqt_gazebo_mybot src/bridge_rqt_gazebo_mybot.cpp)
 
+add_executable(youbot_real_gripper_open src/youbot_real_gripper_open.cpp)
 
 ## Specify libraries to link a library or executable target against
 
@@ -66,4 +68,11 @@ target_link_libraries(youbot_base_rotate_bend
 )
 target_link_libraries(youbot_gazebo_pick_n_place
     ${catkin_LIBRARIES}
+)
+
+target_link_libraries(bridge_rqt_gazebo_mybot
+    ${catkin_LIBRARIES}
+)
+target_link_libraries(youbot_real_gripper_open
+   ${catkin_LIBRARIES}
 )

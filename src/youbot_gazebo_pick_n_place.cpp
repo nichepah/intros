@@ -2,6 +2,7 @@
    Written by Aneesh PA on 04/05/17 for Kuka Youbot
    Tested on Gazebo first
 */
+
 #include <ros/ros.h>
 #include <unistd.h> //for usleep
 #include <trajectory_msgs/JointTrajectory.h>
@@ -75,7 +76,6 @@ int main(int argc, char **argv) {
    ROS_INFO("armPub to Pick Pose at (0.05:0.05:-3.37:0.5:1.21); Gripper Opens; Count: %d\n", count);
    }
  sleep(1.0*sleepDelay); //To let the links reach topic targets
-
 
  // Go down to pick pose
  count = 0;
@@ -166,7 +166,6 @@ int main(int argc, char **argv) {
  }
  sleep(0.2*sleepDelay);
 
-
  //Open grippers and Drop the object
  while (ros::ok() && count<2)
  {
@@ -180,7 +179,6 @@ int main(int argc, char **argv) {
   }
  sleep(0.2*sleepDelay);
 
-
  count = 0;
    while (ros::ok() && count < 2)
    {
@@ -189,13 +187,12 @@ int main(int argc, char **argv) {
      msgArm.points[ind].positions[1]=0.16;
      msgArm.points[ind].positions[2]=-0.27;
      msgArm.points[ind].positions[3]=0.19;
-     msgArm.points[ind].positions[4]= 0.1;
+     msgArm.points[ind].positions[4]= 0.11;
 
      armPub.publish(msgArm);
      count++;
      rate.sleep();
      }
-   ROS_INFO("armPub to Home at (0.05:0.16:-0.27:0.19:0.1); Count: %d\n", count);;
+   ROS_INFO("armPub to Home at (0.05:0.16:-0.27:0.19:0.11); Count: %d\n", count);;
    sleep(sleepDelay);
 }
-
